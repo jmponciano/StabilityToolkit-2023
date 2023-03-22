@@ -65,17 +65,17 @@ de-bug your analyses.
 
 Suppose we want to fit the segregation-selection (SS) model to estimate
 the plasmid cost and the segregation rate, along with the initial
-fraction of segregants. Given your data object name is `trial.data`, you
-can do this with a single line of code:
+fraction of segregants.  Let's try to fit this model to the G1000 data set saved in the package.
+you can do this with a single line of code:
 
 ``` r
-simpleSSfit <- dynamic.fit(data1 = trial.data, model = "SS")
+simpleSSfit <- dynamic.fit(data1 = G1000, model = "SS")
 ```
 
 If you want to fit the Horizontal Transfer model, simply do:
 
 ``` r
-simpleHTfit <- dynamic.fit(data1=trial.data, model = "HT")
+simpleHTfit <- dynamic.fit(data1=G1000, model = "HT")
 ```
 
 Now, various types of biological complexities can be added to the bare
@@ -85,7 +85,7 @@ carrying the plasmid is actually a benefit, then you can do that simply
 by modifying the default `true.cost` argument like this:
 
 ``` r
-simpleSSfit <- dynamic.fit(data1=trial.data,model="SS", true.cost=FALSE)
+simpleSSfit <- dynamic.fit(data1=G1000,model="SS", true.cost=FALSE)
 ```
 
 Here’s another type of practical thing you may want to do. Suppose you
